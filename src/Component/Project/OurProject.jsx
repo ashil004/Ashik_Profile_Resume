@@ -54,8 +54,8 @@ const projectData = [
     image: "https://i.ibb.co.com/nNkjpSDL/Screenshot-4.png", 
     description: "সফটওয়্যার ডেভলপমেন্টের দক্ষতা প্রদর্শনের জন্য সম্পূর্ণ থ্রিডি অ্যানিমেশনে ভরপুর গ্লসি ইউজার ইন্টারফেস সমৃদ্ধ একটি আধুনিক সিঙ্গেল পেজ পোর্টফোলিও। নেক্সট-লেভেল ইন্টারঅ্যাক্টিভিটি এবং স্মুথ স্ক্রোল এক্সপেরিয়েন্সের এই হাই-পারফরম্যান্স প্ল্যাটফর্মটি আমার প্রজেক্ট, ব্যাকএন্ড আর্কিটেকচার এবং টেকনিক্যাল দক্ষতাকে এক অনন্য ও দৃষ্টিনন্দন উপায়ে ফুটিয়ে তোলে।",
     tech: ["React.js", "Three.js", "Email.js", "Tailwind CSS", "Framer Motion"],
-    liveLink: "#",
-    githubLink: "#",
+    liveLink: "https://ashik-profile-resume.vercel.app",
+    githubLink: "https://github.com/ashil004/Ashik_Profile_Resume",
     badgeColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
   }
 ];
