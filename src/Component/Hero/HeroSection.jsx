@@ -148,7 +148,7 @@ export default function HeroSection() {
           </p>
           
           <div className="mt-10 flex flex-wrap items-center gap-5">
-            <a href="Ashik_Paramanik_Resume_v2.pdf" download="Ashik_Resume.pdf">
+            <a href="Ashik_Paramanik_Resume.pdf" download="Ashik_Paramanik_Resume.pdf">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
