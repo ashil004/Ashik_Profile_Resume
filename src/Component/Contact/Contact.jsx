@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser';
 export default function Contact() {
   const formRef = useRef();
 
-  // প্রাথমিক স্টেট
+  
   const [formData, setFormData] = useState({
     from_name: '',
     user_email: '',
@@ -17,7 +17,7 @@ export default function Contact() {
   const [activeField, setActiveField] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // ডাইনামিক হ্যান্ডলার (কোড ছোট এবং নির্ভুল রাখার জন্য)
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -73,11 +73,11 @@ export default function Contact() {
   return (
     <section id="contact" className="relative w-full py-32 bg-[#020617] text-white overflow-hidden z-10 border-t border-white/[0.03]">
       
-      {/* ব্যাকগ্রাউন্ড নিয়ন অরбит গ্লো */}
+      
       <div className="absolute top-1/4 left-1/4 w-[40rem] h-[40rem] rounded-full bg-blue-600/[0.03] blur-[150px] pointer-events-none animate-pulse duration-[8000ms]" />
       <div className="absolute bottom-1/4 right-1/4 w-[35rem] h-[35rem] rounded-full bg-purple-600/[0.02] blur-[130px] pointer-events-none animate-pulse duration-[6000ms]" />
       
-      {/* ডাইনামিক ফিল্ড ফোকাস গ্লো */}
+      
       <motion.div 
         animate={{
           backgroundColor: 
@@ -93,7 +93,7 @@ export default function Contact() {
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center relative z-20">
         
-        {/* ================= বাম পাশ ================= */}
+        
         <motion.div 
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -142,7 +142,7 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* ================= ডান পাশ: ৩D গ্লসি ফর্ম ================= */}
+        
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +162,7 @@ export default function Contact() {
             className="space-y-6"
           >
             
-            {/* ফিল্ড ০১: নাম */}
+            
             <motion.div variants={itemVariants} className="relative">
               <label className={`flex justify-between items-center text-[11px] font-mono uppercase tracking-wider mb-2.5 transition-colors duration-300 ${activeField === 'from_name' ? 'text-blue-400' : 'text-slate-400'}`}>
                 <span>Full Name</span>
@@ -183,7 +183,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* ফিল্ড ০২: ইমেইল */}
+            
             <motion.div variants={itemVariants} className="relative">
               <label className={`flex justify-between items-center text-[11px] font-mono uppercase tracking-wider mb-2.5 transition-colors duration-300 ${activeField === 'user_email' ? 'text-purple-400' : 'text-slate-400'}`}>
                 <span>Email Address</span>
@@ -204,7 +204,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* ফিল্ড ০৩: ফোন নম্বর */}
+            
             <motion.div variants={itemVariants} className="relative">
               <label className={`flex justify-between items-center text-[11px] font-mono uppercase tracking-wider mb-2.5 transition-colors duration-300 ${activeField === 'user_phone' ? 'text-cyan-400' : 'text-slate-400'}`}>
                 <span>Phone Number</span>
@@ -224,13 +224,13 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* ফিল্ড ০৪: মেসেজ */}
+            
             <motion.div variants={itemVariants} className="relative">
               <label className={`flex justify-between items-center text-[11px] font-mono uppercase tracking-wider mb-2.5 transition-colors duration-300 ${activeField === 'message' ? 'text-indigo-400' : 'text-slate-400'}`}>
                 <span>Your Message</span>
               </label>
               <div className="relative">
-                {/* top-4.5 কে পরিবর্তন করে top-5 করা হয়েছে সঠিক Tailwind ক্লাসের জন্য */}
+                
                 <MessageSquare size={15} className={`absolute left-4 top-5 transition-colors duration-300 ${activeField === 'message' ? 'text-indigo-400' : 'text-slate-600'}`} />
                 <textarea 
                   name="message"
@@ -246,7 +246,7 @@ export default function Contact() {
               </div>
             </motion.div>
 
-            {/* সাবমিট বাটন */}
+            
             <motion.button 
               variants={itemVariants}
               whileHover={{ scale: isSubmitting ? 1 : 1.01 }}

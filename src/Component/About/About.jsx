@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function About() {
   const [activeTab, setActiveTab] = useState('bio');
 
-  // কন্টেইনার এবং চাইল্ড এলিমেন্টের জন্য এন্ট্রান্স অ্যানিমেশন ভেরিয়েন্ট
+  
   const containerVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -13,7 +13,7 @@ export default function About() {
       transition: {
         duration: 0.6,
         ease: "easeOut",
-        staggerChildren: 0.2 // একটার পর আরেকটা কার্ড আসার জন্য দেড়ি (Delay)
+        staggerChildren: 0.2 
       }
     }
   };
@@ -25,13 +25,13 @@ export default function About() {
 
   return (
     <section id="about" className="relative w-full py-28 bg-slate-950 text-white overflow-hidden z-10 border-t border-white/5">
-      {/* ব্যাকগ্রাউন্ডে নিয়ন গ্লো ইফেক্ট */}
+      
       <div className="absolute top-1/3 left-1/4 w-[35rem] h-[35rem] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* সেকশন হেডিং (ফেইড ইন ও আপ অ্যানিমেশন) */}
+        
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +50,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
-          {/* ================= বাম পাশ: ডেভেলপার কোড টার্মিনাল ================= */}
+          
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -58,7 +58,7 @@ export default function About() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="lg:col-span-7 w-full rounded-2xl bg-[#050b14]/80 border border-white/10 shadow-2xl backdrop-blur-xl overflow-hidden"
           >
-            {/* টার্মিনাল হেডার বা উইন্ডো কন্ট্রোল বার */}
+            
             <div className="flex items-center justify-between px-5 py-3.5 bg-white/5 border-b border-white/5">
               <div className="flex gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -69,14 +69,14 @@ export default function About() {
               <div className="w-12" />
             </div>
 
-            {/* ফাইল ট্যাব ইন্টারফেস */}
+            
             <div className="flex border-b border-white/5 bg-slate-950/40 text-xs font-mono">
               <button 
                 onClick={() => setActiveTab('bio')}
                 className={`relative px-5 py-2.5 border-r border-white/5 transition-all ${activeTab === 'bio' ? 'bg-[#050b14] text-blue-400' : 'text-slate-500 hover:text-slate-300'}`}
               >
                 📄 bio.json
-                {/* অ্যাক্টিভ ট্যাবের নিচে স্মুথ স্লাইডিং বর্ডার লাইন */}
+                
                 {activeTab === 'bio' && (
                   <motion.div layoutId="activeTabLine" className="absolute bottom-0 left-0 right-0 h-[2px] bg-blue-500" />
                 )}
@@ -92,7 +92,7 @@ export default function About() {
               </button>
             </div>
 
-            {/* টার্মিনাল বডি / কোড এরিয়া (AnimatePresence দিয়ে ট্যাব চেঞ্জের স্মুথ ইফেক্ট) */}
+            
             <div className="p-6 font-mono text-sm leading-relaxed overflow-x-auto text-slate-300 min-h-[300px]">
               <AnimatePresence mode="wait">
                 {activeTab === 'bio' && (
@@ -135,7 +135,7 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* ================= ডান পাশ: ইনফোগ্রাফিক বা হাইলাইট মেট্রিক্স ================= */}
+          
           <motion.div 
             variants={containerVariants}
             initial="hidden"
@@ -143,7 +143,7 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="lg:col-span-5 space-y-6"
           >
-            {/* ১ নম্বর ইনফো কার্ড */}
+            
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }} // হোভার ইফেক্ট
@@ -158,7 +158,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            {/* ২ নম্বর ইনফো কার্ড */}
+            
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}

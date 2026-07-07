@@ -7,11 +7,11 @@ import { Link } from 'react-scroll';
 export default function HeroSection() {
   const canvasRef = useRef(null);
   
-  // ৩ডি কার্ড ইফেক্টের জন্য মোশন ভ্যালু
+  
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // মাউস পজিশনকে রোটেশনে কনভার্ট করা (3D Tilt Effect)
+  
   const rotateX = useTransform(y, [-300, 300], [15, -15]);
   const rotateY = useTransform(x, [-300, 300], [-15, 15]);
 
@@ -31,7 +31,7 @@ export default function HeroSection() {
   }
 
   useEffect(() => {
-    // ১. Scene, Camera এবং Renderer তৈরি করা
+    
     const scene = new THREE.Scene();
     
     const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -45,7 +45,7 @@ export default function HeroSection() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // ২. 3D Object
+    
     const geometry = new THREE.IcosahedronGeometry(1.2, 1); 
     const material = new THREE.MeshStandardMaterial({
       color: 0x60a5fa,
@@ -61,7 +61,7 @@ export default function HeroSection() {
     const coreMesh = new THREE.Mesh(coreGeometry, coreMaterial);
     scene.add(coreMesh);
 
-    // ৩. লাইট
+    
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
@@ -73,7 +73,7 @@ export default function HeroSection() {
     directionalLight.position.set(2, 2, 2);
     scene.add(directionalLight);
 
-    // ৪. অ্যানিমেশন লুপ
+    
     const clock = new THREE.Clock();
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
@@ -91,7 +91,7 @@ export default function HeroSection() {
     };
     animate();
 
-    // ৫. উইন্ডো রিসাইজ হ্যান্ডেল করা
+    
     const handleResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
@@ -216,7 +216,7 @@ export default function HeroSection() {
 
       </div>
 
-      {/* ইন্ডিকেটর */}
+      
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none opacity-50">
         <span className="text-xs uppercase tracking-widest text-slate-500">Scroll Down</span>
         <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-transparent rounded-full animate-bounce" />

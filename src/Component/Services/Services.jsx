@@ -3,7 +3,7 @@ import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import * as LucideIcons from 'lucide-react';
 import { ArrowUpRight } from 'lucide-react';
 
-// ================= স্ট্যাটিক সার্ভিস ডেটা (কম্পোনেন্টের ভেতরেই যুক্ত করা হলো) =================
+
 const staticServicesData = [
   {
     id: 1,
@@ -59,13 +59,13 @@ export default function Services() {
   return (
     <section id="services" className="relative w-full py-32 bg-[#020617] text-white overflow-hidden border-t border-white/[0.03]">
       
-      {/* ব্যাকগ্রাউন্ড গ্লো */}
+      
       <div className="absolute top-1/3 right-1/4 w-[45rem] h-[45rem] rounded-full bg-indigo-600/[0.01] blur-[160px] pointer-events-none" />
       <div className="absolute bottom-1/3 left-1/4 w-[40rem] h-[40rem] rounded-full bg-blue-600/[0.01] blur-[150px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-20">
         
-        {/* হেডার সেকশন */}
+       
         <div className="text-center max-w-2xl mx-auto mb-20 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.02] border border-white/10 backdrop-blur-xl">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
@@ -76,7 +76,7 @@ export default function Services() {
           </h2>
         </div>
 
-        {/* স্ট্যাটিক ডেটা ম্যাপ গ্রিড */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {staticServicesData.map((service, index) => (
             <ServiceCard key={service.id || index} service={service} index={index} />
@@ -88,11 +88,11 @@ export default function Services() {
   );
 }
 
-// ================= প্রতিটি কার্ডের জন্য ডাইনামিক ৩D ও মাউস লাইটিং ইফেক্ট =================
+
 function ServiceCard({ service, index }) {
   const cardRef = useRef(null);
   
-  // Framer Motion Values (রি-রেন্ডার ছাড়া স্মুথ অ্যানিমেশনের জন্য)
+  
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const rotateX = useMotionValue(0);
@@ -101,13 +101,13 @@ function ServiceCard({ service, index }) {
   function handleMouseMove({ currentTarget, clientX, clientY }) {
     const { left, top, width, height } = currentTarget.getBoundingClientRect();
     
-    // কার্সারের রিলেটিভ পজিশন
+    
     const x = clientX - left;
     const y = clientY - top;
     mouseX.set(x);
     mouseY.set(y);
 
-    // ৩D কার্ড টিল্ট (Tilt) হিসাব
+    
     const multiplier = 10; 
     const rX = ((y - height / 2) / height) * -multiplier;
     const rY = ((x - width / 2) / width) * multiplier;
@@ -116,7 +116,7 @@ function ServiceCard({ service, index }) {
   }
 
   function handleMouseLeave() {
-    // মাউস সরালে রি-সেট হবে
+    
     rotateX.set(0);
     rotateY.set(0);
     mouseX.set(-1000);
@@ -142,7 +142,6 @@ function ServiceCard({ service, index }) {
       className="group relative p-8 rounded-[2rem] bg-gradient-to-b from-white/[0.02] to-white/[0.001] border border-white/[0.05] backdrop-blur-3xl transition-shadow duration-500 will-change-transform"
     >
       
-      {/* 🔮 ডাইনামিক মাউস স্পটলাইট বর্ডার */}
       <motion.div
         className="absolute inset-0 rounded-[2rem] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
@@ -173,7 +172,7 @@ function ServiceCard({ service, index }) {
         }}
       />
 
-      {/* 🌟 ডাইনামিক ব্যাকগ্রাউন্ড রেডিয়াল লাইট */}
+      
       <motion.div
         className="absolute inset-0 rounded-[2rem] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
         style={{
@@ -187,15 +186,15 @@ function ServiceCard({ service, index }) {
         }}
       />
 
-      {/* কন্টেন্ট লেয়ার (translateZ দিয়ে থ্রিডি ডেপথ আনা হয়েছে) */}
+      
       <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }} className="relative z-10">
         
-        {/* আইকন বক্স */}
+        
         <div className="w-12 h-12 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-center mb-6 shadow-inner group-hover:scale-110 group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-300">
           <IconComponent className={`w-6 h-6 ${service.iconColor} transition-transform duration-500 group-hover:rotate-[10deg]`} />
         </div>
 
-        {/* টাইটেল ও টেক্সট */}
+      
         <div className="space-y-3">
           <h3 className="text-lg font-bold tracking-tight text-slate-200 group-hover:text-white transition-colors flex items-center justify-between">
             <span>{service.title}</span>
@@ -206,7 +205,7 @@ function ServiceCard({ service, index }) {
           </p>
         </div>
 
-        {/* টেক ট্যাগস */}
+        
         <div className="mt-6 pt-5 border-t border-white/[0.03] flex flex-wrap gap-1.5">
           {service.tech.map((tag, tIdx) => (
             <span 
@@ -218,7 +217,7 @@ function ServiceCard({ service, index }) {
           ))}
         </div>
 
-        {/* কার্ড সিরিয়াল নাম্বার */}
+        
         <div className="absolute top-0 right-0 text-[10px] font-mono text-slate-700 select-none group-hover:text-indigo-500/40 transition-colors">
           // 0{index + 1}
         </div>

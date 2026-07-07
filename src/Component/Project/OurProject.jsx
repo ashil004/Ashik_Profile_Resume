@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
-// Lucide এর সব আইকন অবজেক্ট হিসেবে নিয়ে আসা হলো
 import * as LucideIcons from 'lucide-react'; 
 
 // Swiper Imports
@@ -10,9 +9,9 @@ import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 // Swiper CSS
 import 'swiper/css';
 import 'swiper/css/pagination';
-import 'swiper/css/effect-fade'; // ফেইড ইফেক্ট চাইলে ব্যবহার করতে পারেন
+import 'swiper/css/effect-fade'; 
 
-// প্রজেক্ট ডেটা (image কি ফিল্ড যুক্ত করা হয়েছে)
+
 const projectData = [
   {
     id: 1,
@@ -64,13 +63,13 @@ export default function OurProject() {
   return (
     <section id="projects" className="relative w-full py-32 bg-[#020617] text-white overflow-hidden border-t border-white/[0.03]">
       
-      {/* ব্যাকগ্রাউন্ড নিয়ন গ্লো ইফেক্ট */}
+      
       <div className="absolute top-1/4 left-1/3 w-[50rem] h-[50rem] rounded-full bg-purple-600/[0.01] blur-[180px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/3 w-[45rem] h-[45rem] rounded-full bg-indigo-600/[0.01] blur-[160px] pointer-events-none" />
 
       <div className="max-w-6xl  mx-auto px-6 relative z-20"> 
         
-        {/* ================= হেডার সেকশন ================= */}
+        
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.02] border border-white/10 backdrop-blur-xl">
             <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
@@ -84,12 +83,12 @@ export default function OurProject() {
           </p>
         </div>
 
-        {/* ================= Swiper Single Slider কন্টেইনার ================= */}
+        
         <div className="projects-swiper-container pb-12">
           <Swiper
             modules={[Autoplay, Pagination]}
             spaceBetween={30}
-            slidesPerView={1} // এখানে ১টি করে সিঙ্গেল কার্ড শো করবে
+            slidesPerView={1} 
             loop={true}
             autoplay={{
               delay: 4000,
@@ -112,7 +111,7 @@ export default function OurProject() {
 
       </div>
 
-      {/* স্লাইডারের Pagination ডটস কাস্টমাইজেশন */}
+      {/* slider Pagination  */}
       <style>{`
         .projects-swiper-container .swiper-pagination-bullet {
           background: rgba(255, 255, 255, 0.2) !important;
@@ -126,7 +125,7 @@ export default function OurProject() {
   );
 }
 
-// ================= প্রতিটি প্রজেক্ট কার্ডের জন্য ৩D টিল্ট ও গ্লো ইফেক্ট =================
+// card ar mode 3d glow 
 function ProjectCard({ project, index }) {
   const cardRef = useRef(null);
   
@@ -146,7 +145,7 @@ function ProjectCard({ project, index }) {
     mouseX.set(x);
     mouseY.set(y);
 
-    const multiplier = 8; // সিঙ্গেল বড় কার্ডের জন্য টিল্ট ইফেক্ট কিছুটা স্বাভাবিক (8) রাখা হলো
+    const multiplier = 8; 
     const rX = ((y - height / 2) / height) * -multiplier;
     const rY = ((x - width / 2) / width) * multiplier;
     rotateX.set(rX);
@@ -173,7 +172,7 @@ function ProjectCard({ project, index }) {
       className="group relative p-6 md:p-8 rounded-[2.5rem] bg-gradient-to-b from-white/[0.03] to-white/[0.001] border border-white/[0.05] backdrop-blur-3xl transition-shadow duration-500 will-change-transform w-full  flex flex-col md:flex-row gap-6 md:gap-8 items-center"
     >
       
-      {/* 🔮 ডাইনামিক মাউস স্পটলাইট বর্ডার লাইট */}
+      
       <motion.div
         className="absolute inset-0 rounded-[2.5rem] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
@@ -204,7 +203,7 @@ function ProjectCard({ project, index }) {
         }}
       />
 
-      {/* 🌟 ডাইনামিক ব্যাকগ্রাউন্ড গ্লো ইফেক্ট */}
+      
       <motion.div
         className="absolute inset-0 rounded-[2.5rem] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"
         style={{
@@ -218,7 +217,7 @@ function ProjectCard({ project, index }) {
         }}
       />
 
-      {/* 🖼️ ইমেজ কন্টেইনার (লেফট সাইড / টপ সাইড) */}
+      
       <div 
         style={{ transform: "translateZ(20px)" }} 
         className="w-full md:w-1/2 aspect-[16/10] rounded-2xl overflow-hidden bg-white/[0.02] border border-white/10 relative z-10"
@@ -236,19 +235,19 @@ function ProjectCard({ project, index }) {
         )}
       </div>
 
-      {/* 📝 কন্টেন্ট বডি (রাইট সাইড) */}
+      
       <div 
         style={{ transform: "translateZ(40px)", transformStyle: "preserve-3d" }} 
         className="w-full md:w-1/2 flex flex-col justify-between h-full min-h-[220px] relative z-10"
       >
         <div>
-          {/* ক্যাটাগরি ব্যাজ এবং অ্যাকশন বাটন */}
+          
           <div className="flex items-center justify-between mb-4">
             <span className={`px-3 py-1 rounded-full text-[10px] font-mono font-semibold tracking-wider border ${project.badgeColor}`}>
               {project.category}
             </span>
             
-            {/* লিংকস */}
+            
             <div className="flex items-center gap-3 text-slate-500 relative z-30 pointer-events-auto">
               <a href={project.githubLink} target="_blank" rel="noreferrer" className="hover:text-purple-400 transition-colors duration-200">
                 <GithubIcon size={16} />
@@ -259,7 +258,7 @@ function ProjectCard({ project, index }) {
             </div>
           </div>
 
-          {/* প্রজেক্ট টাইটেল ও বর্ণনা */}
+          
           <div className="space-y-3">
             <h3 className="text-2xl font-bold tracking-tight text-slate-100 group-hover:text-white transition-colors">
               {project.title}
@@ -270,7 +269,7 @@ function ProjectCard({ project, index }) {
           </div>
         </div>
 
-        {/* ফুটার টেক স্ট্যাক ট্যাগসমূহ */}
+        
         <div>
           <div className="mt-6 pt-4 border-t border-white/[0.03] flex flex-wrap gap-1.5">
             {project.tech.map((tag, tIdx) => (
