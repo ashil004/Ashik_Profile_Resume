@@ -56,6 +56,17 @@ const projectData = [
     liveLink: "https://ashik-profile-resume.vercel.app",
     githubLink: "https://github.com/ashil004/Ashik_Profile_Resume",
     badgeColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+  },
+  {
+    id: 5,
+    title: "NSM Private Limited - করপোরেট এন্টারপ্রাইজ প্ল্যাটফর্ম",
+    category: "Enterprise Web Application",
+    image: "https://i.ibb.co.com/0jdRNB36/Screenshot-28.png", 
+    description:"NSM Private Limited-এর জন্য Next.js, Tailwind CSS ও Framer Motion দিয়ে একটি প্রিমিয়াম লাক্সারি ডার্ক-থিমড ওয়েব অ্যাপ্লিকেশন তৈরি করেছি। পারফরম্যান্স বুস্ট ও বিল্ড জটিলতা এড়াতে কাস্টম ইনলাইন SVG আর্কিটেকচার ব্যবহার করা হয়েছে। এছাড়া গ্লোবাল স্টেকহোল্ডারদের নিরবচ্ছিন্ন ও সুরক্ষিত যোগাযোগের জন্য EmailJS-এর মাধ্যমে রিয়েল-টাইম লিড জেনারেশন ফর্ম ইন্টিগ্রেট করেছি।",
+    tech: ["Next.js", "Swiper.js", "Email.js", "Tailwind CSS", "Framer Motion","SVG Architecture"],
+    liveLink: "https://nsmprivatelimited.com",
+    githubLink: "https://github.com/ashil004/nsm-web-app",
+    badgeColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
   }
 ];
 
